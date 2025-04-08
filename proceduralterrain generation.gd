@@ -1,8 +1,6 @@
 extends Node2D
-#one meter == 150px
 
-# status = complete
-# tree_dependent script
+# Procedural terrain generation by Skillshot Games.
 
 #threads
 var loopthread = Thread.new()
@@ -33,14 +31,13 @@ var ice = preload("res://scens/map_items/ice_cubes.scn")
 #rady
 var noise_map = FastNoiseLite.new()
 
-#love u maths <3
 @export var seed:int = Global.seed
 @export var type:int = Global.type
 @export var frequency = Global.frequency
 @export var fractals:int = Global.fractals #default value
 @export var height_initial:int = Global.height_initial #heighst y value for any point in 1st chunck
 @export var height_increment:int = Global.height_increment #increase in irragularity/noise per chunck in pixels
-@export var slope:int = Global.slope #slope of map,increment per chunck in pixels, +ve for everest/climb -ve for hell
+@export var slope:int = Global.slope #slope of map,increment per chunck in pixels
 @export var y_scale:int = Global.y_scale #least y distance
 @export var itrations:int = 200 #200 is optimal # no. of points in a chunck,size of for loop
 @export var x_scale:int = 50 #minimum distance between adjesent points in a chunck
